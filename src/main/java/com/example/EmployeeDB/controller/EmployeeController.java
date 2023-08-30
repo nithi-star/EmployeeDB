@@ -42,12 +42,14 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return "Employee detail deleted successfully";
     }
-    @GetMapping("/sorted")              //for sorting based on designation(4)
+
+    //for sorting based on designation
+    @GetMapping("/sorted")
     public List<Employee> getEmployeeByDesignation(){
         return employeeService.getByEmployeeSorted();
     }
 
-    //high performers(4)
+    //to get high performers
     @GetMapping("/topPerformers")
     public List<Employee> getTopPerformers() {
         return employeeService.getTopPerformersLast3Months();

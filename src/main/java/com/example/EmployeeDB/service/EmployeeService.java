@@ -10,9 +10,11 @@ public interface EmployeeService {
     public String deleteEmployee(String employeeId);
     public Employee getEmployee(String employeeId);
     public List<Employee> getAllEmployee();
-    List<Employee> getByEmployeeSorted();           //for sorting based on designation(3)
 
-    //high performers(3)
+    //for sorting based on designation
+    List<Employee> getByEmployeeSorted();
+
+    //to get the high performers
     List<Employee> getTopPerformersLast3Months();
 
 

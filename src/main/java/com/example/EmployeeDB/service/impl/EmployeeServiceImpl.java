@@ -57,13 +57,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findAll();
     }
 
+    //for sorting based on designation
     @Override
-    public List<Employee> getByEmployeeSorted(){                //for sorting based on designation(2)
+    public List<Employee> getByEmployeeSorted(){
         Sort sort = Sort.by(Sort.Direction.ASC,"designation");
         return employeeRepository.findAll(sort);
     }
 
-    //high performers(2)
+    //to get the high performers
     public List<Employee> getTopPerformersLast3Months() {
         Date threeMonthsAgo = new Date(System.currentTimeMillis() - (90L * 24L * 3600L * 1000L)); // 90 days in milliseconds
         return employeeRepository.findTopPerformersLast3Months(threeMonthsAgo);
